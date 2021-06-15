@@ -25,6 +25,12 @@
     "demo-e2e": {
       "tags": [],
       "implicitDependencies": ["demo"]
+    },
+    "data-access-models": {
+      "tags": []
+    },
+    "data-access-google-books-api": {
+      "tags": []
     }
   }
 }

@@ -147,6 +147,48 @@
           }
         }
       }
+    },
+    "data-access-models": {
+      "root": "libs/data-access/models",
+      "sourceRoot": "libs/data-access/models/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/data-access/models/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/data-access/models"],
+          "options": {
+            "jestConfig": "libs/data-access/models/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "data-access-google-books-api": {
+      "root": "libs/data-access/google-books-api",
+      "sourceRoot": "libs/data-access/google-books-api/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/data-access/google-books-api/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/data-access/google-books-api"],
+          "options": {
+            "jestConfig": "libs/data-access/google-books-api/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

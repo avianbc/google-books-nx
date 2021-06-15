@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nxworkspace/data-access/models": [
+        "libs/data-access/models/src/index.ts"
+      ],
+      "@nxworkspace/data-access/google-books-api": [
+        "libs/data-access/google-books-api/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
