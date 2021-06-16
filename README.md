@@ -1,4 +1,10 @@
+# Quick start
 
+1. Clone the `google-books-nx` repo and install packages: `npm install` (or `yarn install`)
+2. Build (or serve) the shared libs: `npx nx build shared` or `npx nx serve shared`
+3. Build (and then serve) the demo app: `npx nx serve demo`
+
+If you prefer a global Nx installation you can run `npm install -g nx` which would then simplify the `npx` commands from above to something like `nx serve demo`.
 
 # Nxworkspace
 
@@ -57,7 +63,7 @@ Libraries are shareable across libraries and applications. They can be imported 
 
 ## Development server
 
-Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+Run `ng serve my-app` for a dev server. Navigate to <http://localhost:4200/>. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
