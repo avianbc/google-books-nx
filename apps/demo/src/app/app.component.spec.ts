@@ -2,6 +2,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
+import { generateMockBook } from '@nxworkspace/data-access/models';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
@@ -22,31 +23,27 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render books', () => {
+  it('should render a single book', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.componentInstance.books = [
-      {
-        id: '1',
-        volumeInfo: {
-          title: 'title',
-          subtitle: 'subtitle',
-          authors: ['author1', 'author2'],
-          publisher: 'publisher',
-          publishedDate: 'publishedDate',
-          description: 'description',
-          imageLinks: {
-            thumbnail: 'thumbnail',
-            smallThumbnail: 'smallThumbnail',
-          },
-        },
-        searchInfo: {
-          textSnippet: 'textSnippet',
-        }
-      }
+      generateMockBook(),
     ];
 
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('book-component')).toBeTruthy();
+  });
+
+  it('should render multiple books', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.componentInstance.books = [
+      generateMockBook(),
+      generateMockBook(),
+    ];
+
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    const renderedBookCount = compiled.querySelectorAll('book-component').length;
+    expect(renderedBookCount).toBe(fixture.componentInstance.books.length);
   });
 });

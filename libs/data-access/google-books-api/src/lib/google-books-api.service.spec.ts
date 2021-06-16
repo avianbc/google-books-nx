@@ -5,7 +5,7 @@ import { cold } from 'jasmine-marbles';
 
 import { GoogleBooksApiService } from './google-books-api.service';
 
-describe('Service: GoogleBooks', () => {
+describe('GoogleBooksApiService', () => {
   let service: GoogleBooksApiService;
   let http: HttpClient;
 

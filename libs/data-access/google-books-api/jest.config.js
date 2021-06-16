@@ -1,6 +1,7 @@
 module.exports = {
   displayName: 'data-access-google-books-api',
   preset: '../../../jest.preset.js',
+  setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',

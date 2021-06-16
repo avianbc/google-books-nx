@@ -77,3 +77,24 @@ export interface ReadingModes {
   text: boolean;
   image: boolean;
 }
+
+export function generateMockBook(): Book {
+  return {
+    id: '1',
+    volumeInfo: {
+      title: 'title',
+      subtitle: 'subtitle',
+      authors: ['author1', 'author2'],
+      publisher: 'publisher',
+      publishedDate: 'publishedDate',
+      description: 'description',
+      imageLinks: {
+        thumbnail: 'thumbnail',
+        smallThumbnail: 'smallThumbnail',
+      },
+    },
+    searchInfo: {
+      textSnippet: 'textSnippet',
+    }
+  };
+}
