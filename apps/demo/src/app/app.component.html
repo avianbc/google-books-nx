@@ -1,2 +1,12 @@
-<h1>Welcome to {{ title }}!</h1>
-<my-component first="Stencil" last="Lastname"></my-component>
+<div class="shadow flex">
+  <input class="w-full rounded p-2" type="text" placeholder="Search Google Boooks..." [formControl]="searchQuery" (keyup.enter)="search(searchQuery.value)">
+  <button class=" w-auto flex justify-end items-center text-blue p-2 hover:text-blue-light" (click)="search(searchQuery.value)">
+    <i class="material-icons">search</i>
+  </button>
+</div>
+
+<div class="flex flex-wrap -mx-1 overflow-hidden">
+  <div class="my-1 px-1 w-full overflow-hidden sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/3" *ngFor="let book of books">
+    <book-component [book]="book"></book-component>
+  </div>
+</div>
