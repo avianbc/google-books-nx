@@ -21,4 +21,18 @@ export class AppComponent {
     this.googleBooksApiService.searchBooks(searchQuery)
       .subscribe(response => this.books = response);
   }
+
+  toggleDarkMode() {
+    const light = document.querySelector('.light');
+    const dark = document.querySelector('.dark');
+    if (light) {
+      light.classList.remove('light');
+      light.classList.add('dark');
+    } else {
+      dark?.classList.remove('dark');
+      dark?.classList.add('light');
+    }
+
+
+  }
 }

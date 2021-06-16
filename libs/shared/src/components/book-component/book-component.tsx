@@ -25,7 +25,7 @@ export class BookComponent {
         </div>
         <div class="ml-4">
           <div class="text-xl mb-2">
-            <a target="_blank" class="mb-2" href={this.book?.volumeInfo?.previewLink ?? this.book?.volumeInfo?.infoLink}>{this.book?.volumeInfo?.title}</a>
+            <a target="_blank" class="mb-2 text-blue-700" href={this.book?.volumeInfo?.previewLink ?? this.book?.volumeInfo?.infoLink}>{this.book?.volumeInfo?.title}</a>
           </div>
           <div class="text-lg mb-2">{this.truncate(this.book?.volumeInfo?.subtitle, 100)}</div>
           <div class="text-xs text-blue-600 mb-2">
