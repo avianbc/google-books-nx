@@ -57,8 +57,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "1mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -186,6 +186,64 @@
           "options": {
             "jestConfig": "libs/data-access/google-books-api/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared": {
+      "root": "libs/shared",
+      "sourceRoot": "libs/shared/src",
+      "projectType": "library",
+      "architect": {
+        "test": {
+          "builder": "@nxext/stencil:test",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/shared/stencil.config.ts",
+            "outputPath": "dist/libs/shared"
+          }
+        }
+      },
+      "schematics": {
+        "@nxext/stencil:component": {
+          "style": "scss",
+          "storybook": false
+        }
+      },
+      "targets": {
+        "build": {
+          "builder": "@nxext/stencil:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/shared/stencil.config.ts",
+            "outputPath": "dist/libs/shared"
+          },
+          "configurations": {
+            "production": {
+              "dev": false
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nxext/stencil:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/shared/stencil.config.ts",
+            "outputPath": "dist/libs/shared",
+            "serve": true,
+            "watch": true
+          }
+        },
+        "e2e": {
+          "builder": "@nxext/stencil:e2e",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/shared/stencil.config.ts",
+            "outputPath": "dist/libs/shared"
           }
         }
       }

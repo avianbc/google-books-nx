@@ -20,7 +20,9 @@
       ],
       "@nxworkspace/data-access/google-books-api": [
         "libs/data-access/google-books-api/src/index.ts"
-      ]
+      ],
+      "@nxworkspace/shared": ["dist/libs/shared"],
+      "@nxworkspace/shared/loader": ["dist/libs/shared/loader"]
     }
   },
   "exclude": ["node_modules", "tmp"]
