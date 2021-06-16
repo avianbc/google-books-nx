@@ -32,7 +32,5 @@ export class AppComponent {
       dark?.classList.remove('dark');
       dark?.classList.add('light');
     }
-
-
   }
 }

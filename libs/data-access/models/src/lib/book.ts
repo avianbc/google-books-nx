@@ -1,11 +1,11 @@
 export interface Book {
-  kind: string;
+  kind?: string;
   id: string;
-  etag: string;
-  selfLink: string;
+  etag?: string;
+  selfLink?: string;
   volumeInfo: VolumeInfo;
-  saleInfo: SaleInfo;
-  accessInfo: AccessInfo;
+  saleInfo?: SaleInfo;
+  accessInfo?: AccessInfo;
   searchInfo: SearchInfo;
 }
 
@@ -43,19 +43,19 @@ export interface VolumeInfo {
   publisher: string;
   publishedDate: string;
   description: string;
-  industryIdentifiers: IndustryIdentifier[];
-  readingModes: ReadingModes;
-  pageCount: number;
-  printType: string;
-  maturityRating: string;
-  allowAnonLogging: boolean;
-  contentVersion: string;
-  panelizationSummary: PanelizationSummary;
+  industryIdentifiers?: IndustryIdentifier[];
+  readingModes?: ReadingModes;
+  pageCount?: number;
+  printType?: string;
+  maturityRating?: string;
+  allowAnonLogging?: boolean;
+  contentVersion?: string;
+  panelizationSummary?: PanelizationSummary;
   imageLinks: ImageLinks;
-  language: string;
-  previewLink: string;
-  infoLink: string;
-  canonicalVolumeLink: string;
+  language?: string;
+  previewLink?: string;
+  infoLink?: string;
+  canonicalVolumeLink?: string;
 }
 
 export interface ImageLinks {
