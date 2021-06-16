@@ -61,7 +61,7 @@ Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The 
 
 ## Code scaffolding
 
-Run `ng g component my-component --project=my-app` to generate a new component.
+Run `ng g component book-component --project=my-app` to generate a new component.
 
 ## Build
 

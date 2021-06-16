@@ -5,57 +5,42 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Book } from "@nxworkspace/data-access/models";
 export namespace Components {
-    interface MyComponent {
+    interface BookComponent {
         /**
-          * The first name
+          * The book to display
          */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+        "book": Book;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLBookComponentElement extends Components.BookComponent, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLBookComponentElement: {
+        prototype: HTMLBookComponentElement;
+        new (): HTMLBookComponentElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "book-component": HTMLBookComponentElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
+    interface BookComponent {
         /**
-          * The first name
+          * The book to display
          */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+        "book"?: Book;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "book-component": BookComponent;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "book-component": LocalJSX.BookComponent & JSXBase.HTMLAttributes<HTMLBookComponentElement>;
         }
     }
 }

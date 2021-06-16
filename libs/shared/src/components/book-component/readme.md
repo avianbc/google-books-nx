@@ -1,4 +1,4 @@
-# my-component
+# book-component
 
 <!-- Auto Generated Below -->
 
