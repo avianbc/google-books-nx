@@ -13,29 +13,26 @@ export class BookComponent {
    */
   @Prop() book: Book;
 
+  private truncate(input: string, length: number) {
+    return input?.length > length ? input.substring(0, length) + "..." : input;
+  }
+
   render() {
     return (
-      <div class="p-6">
-        <div class="max-w-md bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-          <div class="md:flex">
-            <div class="md:flex-shrink-0">
-              <img
-                class="h-48 w-full object-cover md:h-full md:w-48"
-                src={this.book?.volumeInfo?.imageLinks.smallThumbnail}
-              ></img>
-            </div>
-            <div class="p-4">
-              <div class="uppercase tracking-wide text-sm font-semibold">
-                <p>{this.book.volumeInfo?.title}</p>
-                <small>{this.book.volumeInfo?.subtitle}</small>
-              </div>
-              <p class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">
-                {this.book.volumeInfo?.authors.map((a) => a + ',')}
-              </p>
-              <p class="mt-2 text-gray-500">
-                {this.book.searchInfo?.textSnippet}
-              </p>
-            </div>
+      <div class="flex">
+        <div>
+          <img class="float-left" src={this.book?.volumeInfo?.imageLinks?.thumbnail}></img>
+        </div>
+        <div class="ml-4">
+          <div class="text-xl mb-2">
+            <a target="_blank" class="mb-2" href={this.book?.volumeInfo?.previewLink ?? this.book?.volumeInfo?.infoLink}>{this.book?.volumeInfo?.title}</a>
+          </div>
+          <div class="text-lg mb-2">{this.truncate(this.book?.volumeInfo?.subtitle, 100)}</div>
+          <div class="text-xs text-blue-600 mb-2">
+            {this.book?.volumeInfo?.authors?.map((author, index) => (index ? ' · ' : '') + author) ?? 'No author'}
+          </div>
+          <div>
+            {this.truncate(this.book?.searchInfo?.textSnippet ?? this.book?.volumeInfo?.description, 250)}
           </div>
         </div>
       </div>
